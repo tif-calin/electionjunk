@@ -1,7 +1,8 @@
 import { VoteData } from './types';
 
 const corsProxy = 'https://api.allorigins.win/get?url='
-const URL = corsProxy + 'https://results.elections.virginia.gov/vaelections/2021%20November%20General/Json/Statewide.json'
+const API_URL = 'https://results.elections.virginia.gov/vaelections/2021%20November%20General/Json/Statewide.json'
+const URL = corsProxy + API_URL
 
 const mungeVoteData = (data: any): VoteData => {
   let total = 0;
@@ -25,10 +26,11 @@ const mungeVoteData = (data: any): VoteData => {
 const fetchData = async () => {
   const { contents } = await fetch(URL).then(res => res.json())
 
-  const data =mungeVoteData(JSON.parse(contents)['Races'][0])
+  const data = mungeVoteData(JSON.parse(contents)['Races'][0])
 
   console.log(data)
   return data
 }
 
 export default fetchData
+export { API_URL as URL }
