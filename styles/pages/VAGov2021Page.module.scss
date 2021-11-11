@@ -1,0 +1,41 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: calc(12rem + 40vw);
+  max-width: 99vw;
+  min-width: 300px;
+  gap: 0.5rem;
+  padding: 1rem;
+  // border: 2px solid #222;
+}
+
+.stats {
+  border: 2px solid #222;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  & > * {
+    padding: 0.125rem;
+    padding-right: 0.5rem;
+    width: 100%;
+  }
+
+  & > span {
+    display: flex;
+    justify-content: space-between;
+    max-width: 16rem;
+  }
+
+  & > *:nth-child(4n),
+  & > *:nth-child(4n - 1) {
+    background-color: #2222;
+  }
+
+  label {
+    margin-right: 0.5rem;
+    &::after { content: ':' }
+  }
+}

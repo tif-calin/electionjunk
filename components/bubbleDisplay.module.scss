@@ -1,0 +1,28 @@
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  font-size: 0.75rem;
+  border: 1px solid #222;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+
+  span {
+    top: calc(50% + 0.5rem);
+    font-weight: 300;
+    opacity: 0.8;
+    position: absolute;
+  }
+}
