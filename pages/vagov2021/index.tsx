@@ -3,7 +3,7 @@ import React from 'react'
 import fetchVoteData from '../../lib/services/vagov2021/voteCount'
 import { VoteData } from '../../lib/services/vagov2021/types'
 import styles from '../../styles/pages/VAGov2021Page.module.scss'
-// import AbsenteeData from '../../components/vagov2021/absentee'
+import AbsenteeData from '../../components/vagov2021/absentee'
 
 const VAGov2021Page: NextPage = () => {
   const [dataVote, setDataVote] = React.useState<VoteData>({} as any)
@@ -32,7 +32,7 @@ const VAGov2021Page: NextPage = () => {
         </div>
       </>}
 
-      {/* {<AbsenteeData/>} */}
+      {<AbsenteeData/>}
     </div>
   )
 };
